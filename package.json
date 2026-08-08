@@ -1,0 +1,23 @@
+{
+  "name": "employee-leave-management-system",
+  "version": "1.0.0",
+  "description": "Full-Stack Employee Leave Management System built with React, Node.js, Express, and MongoDB Atlas",
+  "main": "server/server.js",
+  "scripts": {
+    "postinstall": "npm install --prefix client && npm install --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "node server/server.js",
+    "dev:server": "node --watch server/server.js",
+    "dev:client": "npm run dev --prefix client",
+    "dev": "node --watch server/server.js"
+  },
+  "keywords": [
+    "mern",
+    "leave-management",
+    "react",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC"
+}

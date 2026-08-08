@@ -1,0 +1,83 @@
+.balance-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 40px;
+}
+
+.balance-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.balance-header h1 {
+  margin: 0;
+  color: #253b8f;
+}
+
+.balance-header p {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.balance-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.balance-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.balance-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.remaining {
+  font-size: 38px;
+  font-weight: bold;
+  color: #253b8f;
+  margin: 10px 0 0;
+}
+
+.balance-card span {
+  color: #777;
+}
+
+.progress {
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 10px;
+  margin: 20px 0 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  background: #253b8f;
+}
+
+.casual {
+  width: 67%;
+}
+
+.sick {
+  width: 50%;
+}
+
+.annual {
+  width: 75%;
+}
+
+.emergency {
+  width: 60%;
+}
+
+.balance-card small {
+  color: #777;
+}
