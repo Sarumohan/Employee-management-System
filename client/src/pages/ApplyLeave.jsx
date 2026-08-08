@@ -106,7 +106,7 @@ function ApplyLeave() {
               <label>Reason</label>
               <textarea
                 name="reason"
-                placeholder="Enter the reason for your leave..."
+                placeholder="Enter reason for leave"
                 rows="5"
                 value={formData.reason}
                 onChange={handleChange}

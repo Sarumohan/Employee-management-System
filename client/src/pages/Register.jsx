@@ -29,7 +29,6 @@ function Register() {
       navigate("/dashboard");
     } catch (err) {
       console.warn("Registration error fallback:", err.message);
-      // Fallback local session if server database credentials are still being configured
       localStorage.setItem(
         "elms_user",
         JSON.stringify({
@@ -62,7 +61,7 @@ function Register() {
             <input
               type="text"
               name="name"
-              placeholder="e.g. Alex Johnson"
+              placeholder="Enter full name"
               value={formData.name}
               onChange={handleChange}
               required
@@ -75,7 +74,7 @@ function Register() {
               <input
                 type="text"
                 name="username"
-                placeholder="e.g. alexj"
+                placeholder="Enter username"
                 value={formData.username}
                 onChange={handleChange}
                 required
@@ -103,7 +102,7 @@ function Register() {
             <input
               type="email"
               name="email"
-              placeholder="e.g. alex@company.com"
+              placeholder="Enter email address"
               value={formData.email}
               onChange={handleChange}
               required
@@ -115,7 +114,7 @@ function Register() {
             <input
               type="password"
               name="password"
-              placeholder="Create password"
+              placeholder="Enter password"
               value={formData.password}
               onChange={handleChange}
               required

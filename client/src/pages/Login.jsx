@@ -5,8 +5,8 @@ import "./Login.css";
 
 function Login() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("employee");
-  const [password, setPassword] = useState("123456");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -51,7 +51,7 @@ function Login() {
             <label>Username</label>
             <input
               type="text"
-              placeholder="Enter username (e.g. employee)"
+              placeholder="Enter username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
