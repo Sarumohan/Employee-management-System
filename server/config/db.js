@@ -7,6 +7,17 @@ const connectDB = async () => {
     // Automatically sanitize uri by stripping whitespace and quotation marks
     uri = uri.trim().replace(/^["']|["']$/g, '');
 
+    // Handle case where "MONGODB_URI=mongodb+srv://..." was pasted into the Value field
+    if (uri.includes('=')) {
+      const parts = uri.split('=');
+      const foundMongoUri = parts.find(
+        (p) => p.trim().startsWith('mongodb://') || p.trim().startsWith('mongodb+srv://')
+      );
+      if (foundMongoUri) {
+        uri = foundMongoUri.trim();
+      }
+    }
+
     if (!uri) {
       console.error('MongoDB Connection Error: MONGODB_URI environment variable is not defined.');
       return;
@@ -14,7 +25,7 @@ const connectDB = async () => {
 
     if (!uri.startsWith('mongodb://') && !uri.startsWith('mongodb+srv://')) {
       console.error(
-        `MongoDB Connection Error: Invalid URI scheme "${uri.substring(0, 10)}...". Expected string starting with "mongodb://" or "mongodb+srv://".`
+        `MongoDB Connection Error: Invalid URI. Value in Render is currently "${uri}". Expected a connection string starting with "mongodb+srv://" or "mongodb://".`
       );
       return;
     }
