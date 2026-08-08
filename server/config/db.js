@@ -30,6 +30,10 @@ const connectDB = async () => {
       return;
     }
 
+    // Auto-fix common URI query parameter issues like retryWrites without =true
+    uri = uri.replace(/retryWrites(?!=)/g, 'retryWrites=true');
+    uri = uri.replace(/retryWrites=(?=&|$)/g, 'retryWrites=true');
+
     const conn = await mongoose.connect(uri);
     console.log(`MongoDB Atlas Connected: ${conn.connection.host}`);
   } catch (error) {
